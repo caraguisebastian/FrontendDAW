@@ -1,0 +1,24 @@
+
+<div>
+  <p>{{ titleTest }}</p>
+  <button id="basic" type="button" mat-button (click)="incrementCounter()">
+    Increment
+  </button>
+  <p>Counter: {{counterTest}}</p>
+</div>
+
+<div>
+  <p>List</p>
+  <p *ngFor="let user of listTest" (click)="selectUser(user)">{{ user.name }}</p>
+
+  <p>Selected user: = {{ selectedUser.name | uppercase}}</p>
+</div>
+
+<div>
+  <input [(ngModel)]="selectedUser.name">
+</div>
+
+
+<div *ngIf="selectedUser.name" [ngStyle]="{background: selectedUser.background}">
+  User is selected
+</div>
