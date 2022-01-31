@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CartComponent } from './cart/cart.component';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('cartModal') detailModal?: CartComponent;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  openCart() {
+    this.detailModal?.show();
+   }
 }
