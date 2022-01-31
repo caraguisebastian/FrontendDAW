@@ -24,12 +24,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     console.log('home init')
 
-
     this.productService.get().subscribe((data: Product[]) => {
 
       for (let i = 0; i < data.length; i++) {
         this.productService.getById(data[i].id).subscribe((info: Product) => {
           info.id = data[i].id;
+          // Too lazy to modify the DB to also have an image field so the image of the products will be random
           if (!info.img) {
             var pepes = [
               'https://preview.redd.it/lfh1a8x18wz41.jpg?auto=webp&s=08522b923c79e70ebd476f6cad26985ae6d884a1',

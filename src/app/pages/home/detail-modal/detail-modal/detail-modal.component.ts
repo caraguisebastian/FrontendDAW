@@ -33,6 +33,7 @@ export class DetailModalComponent implements OnInit {
         this.product = data;
         this.product.id = id;
         this.getCategoryName(this.product.categoryId);
+        // Too lazy to modify the DB to also have an image field so the image of the products will be random
         if (!data.img) {var pepes = [
           'https://preview.redd.it/lfh1a8x18wz41.jpg?auto=webp&s=08522b923c79e70ebd476f6cad26985ae6d884a1',
           'https://i.pinimg.com/736x/14/1f/0c/141f0c0ee298388c5a44baff34b76d0f.jpg',
